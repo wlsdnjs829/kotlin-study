@@ -5,10 +5,43 @@ import com.example.kotlin.kotlin_in_action_2.Color.ORANGE
 import com.example.kotlin.kotlin_in_action_2.Color.RED
 import com.example.kotlin.kotlin_in_action_2.Color.YELLOW
 import java.util.Objects
+import java.util.TreeMap
 
 fun main() {
-    println(Sum(Num(1), Num(2)).eval())
+    println("JINWON" in arrayListOf("HI", "JINWON"))
 }
+
+fun isLetter(char: Char) = char in 'a'..'z' || char in 'A'..'Z'
+
+fun listIterator() {
+    val list = arrayListOf("10", "11", "12")
+
+    for ((index, value) in list.withIndex()) {
+        println("$index: $value")
+    }
+}
+
+fun mapIterator() {
+    val binaryReps = TreeMap<Char, String>()
+
+    for (char in 'A'..'F') {
+        val binary = Integer.toBinaryString(char.code)
+        binaryReps[char] = binary
+    }
+
+    for ((letter, binary) in binaryReps) {
+        println("$letter = $binary")
+    }
+}
+
+fun fizzBuzz(num: Int) =
+    when {
+        num % 15 == 0 -> "FizzBuzz"
+        num % 3 == 0 -> "Fizz"
+        num % 5 == 0 -> "Buzz"
+        else -> "$num"
+    }
+
 
 fun max(a: Int, b: Int) = if (a > b) a else b
 
@@ -27,3 +60,4 @@ class Person(var name: String?) {
         }
 
 }
+
