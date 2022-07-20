@@ -4,11 +4,23 @@ import com.example.kotlin.kotlin_in_action_2.Color.GREEN
 import com.example.kotlin.kotlin_in_action_2.Color.ORANGE
 import com.example.kotlin.kotlin_in_action_2.Color.RED
 import com.example.kotlin.kotlin_in_action_2.Color.YELLOW
+import java.io.BufferedReader
+import java.io.StringReader
 import java.util.Objects
 import java.util.TreeMap
 
 fun main() {
-    println("JINWON" in arrayListOf("HI", "JINWON"))
+    readNumber(BufferedReader(StringReader("Not Number")))
+}
+
+fun readNumber(reader: BufferedReader) {
+    val number = try {
+        Integer.parseInt(reader.readLine())
+    } catch (e: NumberFormatException) {
+        null
+    }
+
+    println(number)
 }
 
 fun isLetter(char: Char) = char in 'a'..'z' || char in 'A'..'Z'
