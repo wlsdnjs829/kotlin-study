@@ -1,11 +1,21 @@
 package com.example.kotlin.kotlin_in_action_3
 
-fun main() {
+import com.example.kotlin.method.NAME
+import com.example.kotlin.method.joinToString
 
+fun main() {
+    val arrayListOf = arrayListOf(1, 7, 53)
+    println(joinToString(arrayListOf))
+    println(NAME)
 }
 
 fun collection() {
     hashSetOf(1, 7, 53)
     arrayListOf(1, 7, 53)
     hashMapOf(1 to "ONE", 7 to "SEVEN", 52 to "FIFTY-THREE")
+}
+
+fun listToString() {
+    val listOf = listOf(1, 2, 3)
+    println(listOf)
 }
