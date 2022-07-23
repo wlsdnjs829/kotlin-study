@@ -1,12 +1,7 @@
 package com.example.kotlin.kotlin_in_action_3
 
-import com.example.kotlin.method.NAME
-import com.example.kotlin.method.joinToString
-
 fun main() {
-    val arrayListOf = arrayListOf(1, 7, 53)
-    println(joinToString(arrayListOf))
-    println(NAME)
+
 }
 
 fun collection() {
@@ -19,3 +14,4 @@ fun listToString() {
     val listOf = listOf(1, 2, 3)
     println(listOf)
 }
+
