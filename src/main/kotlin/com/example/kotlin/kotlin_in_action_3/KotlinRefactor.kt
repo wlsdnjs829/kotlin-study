@@ -23,5 +23,13 @@ class KotlinRefactor {
 
 }
 
-class User(val id: Int, val name: String, val address: String)
+class User(val id: Int, _name: String, val address: String) {
 
+    var name: String = _name
+    private set
+
+}
+
+open class NoArgs
+
+class Hi : NoArgs()
