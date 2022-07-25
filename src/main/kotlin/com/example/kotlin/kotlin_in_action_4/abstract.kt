@@ -1,7 +1,9 @@
 package com.example.kotlin.kotlin_in_action_4
 
-fun main() {
-    Button().showOff()
+class B {
+    fun main() {
+        A.bar()
+    }
 }
 
 abstract class Animated {
