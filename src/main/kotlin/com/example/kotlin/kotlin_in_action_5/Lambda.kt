@@ -1,8 +1,20 @@
 package com.example.kotlin.kotlin_in_action_5
 
+fun salute() = println("Salute!")
+
 fun main() {
-    printProblemCounts(listOf("403", "500"))
+    val person = Person("진원", 28)
+    val bound = person::name
+    println(bound.get())
 }
+
+fun constructDelay() {
+    val createPerson = ::Person
+    val person = createPerson("진원", 28)
+    println(person)
+}
+
+fun Person.isAdult() = age >= 21
 
 fun max() {
     val people = listOf(Person("진원", 28), Person("젊은 진원", 18))
