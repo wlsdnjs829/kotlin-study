@@ -1,8 +1,15 @@
 package com.example.kotlin.kotlin_in_action_5
 
 fun main() {
-
+    max()
 }
+
+fun max() {
+    val people = listOf(Person("진원", 28), Person("젊은 진원", 18))
+    println(people.maxByOrNull(Person::age))
+}
+
+data class Person(val name: String, val age: Int)
 
 /*
 
