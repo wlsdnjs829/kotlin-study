@@ -1,7 +1,7 @@
 package com.example.kotlin.kotlin_in_action_5
 
 fun main() {
-    lambdaJoinToString()
+    printProblemCounts(listOf("403", "500"))
 }
 
 fun max() {
@@ -11,7 +11,7 @@ fun max() {
 
 fun lambdaJoinToString() {
     val people = listOf(Person("진원", 28), Person("젊은 진원", 18))
-    println(people.joinToString(" ") { it.name } )
+    println(people.joinToString(" ") { it.name })
 }
 
 fun lambdaVal() {
@@ -20,6 +20,25 @@ fun lambdaVal() {
 }
 
 data class Person(val name: String, val age: Int)
+
+fun printMessagesWithPrefix(messages: Collection<String>, prefix: String) {
+    messages.forEach {
+        println("$prefix $it")
+    }
+}
+
+fun printProblemCounts(responses: Collection<String>) {
+    var clientErrors = 0
+    var serverErrors = 0
+
+    responses.forEach {
+        if (it.startsWith("4")) clientErrors++
+        if (it.startsWith("5")) serverErrors++
+    }
+
+    println("$clientErrors client errors, $serverErrors server errors")
+}
+
 
 /*
 
