@@ -21,3 +21,11 @@ fun handleComputation(id: String) {
     postponeComputation(1000) { println(id) } // 람다 안에서 주변 영역의 변수를 포획한 경우, handleComputation 호출 시마다 새로운 객체를 생성하여 반환한다.
 }
  */
+
+fun createAllDoneRunnable() : Runnable {
+    return Runnable { println("SAM 생성자") }
+}
+
+fun main() {
+    createAllDoneRunnable().run()
+}
