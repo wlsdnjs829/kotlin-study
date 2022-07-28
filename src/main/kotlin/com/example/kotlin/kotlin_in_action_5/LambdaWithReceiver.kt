@@ -1,7 +1,7 @@
 package com.example.kotlin.kotlin_in_action_5
 
 fun main() {
-    println(alphabetRefactor())
+    println(alphabetBuildStringRefactor())
 }
 
 fun alphabet(): String {
@@ -24,3 +24,25 @@ fun alphabetRefactor() = with(StringBuilder()) {
     toString()
 }
 
+fun alphabetApplyRefactor() = StringBuilder().apply {
+    for (letter in 'A'..'Z') {
+        append(letter)
+    }
+
+    append("\nNow I know the alphabet!")
+}.toString()
+
+fun alphabetBuildStringRefactor() = buildString {
+    for (letter in 'A'..'Z') {
+        append(letter)
+    }
+
+    append("\nNow I know the alphabet!")
+}
+
+//fun createViewWithCustomAttributes(context: ServerResponse.Context) {
+//    TextView(context).apply {
+//        text = "샘플"
+//        textSize = 20.0
+//    }
+//}
