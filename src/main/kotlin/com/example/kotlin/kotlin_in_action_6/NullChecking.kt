@@ -53,6 +53,3 @@ fun Person.countryName(): String {
     return country ?: "Unknown"
 }
 
-fun foo(s: String?) {
-    val t = s ?: ""
-}
