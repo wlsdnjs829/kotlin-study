@@ -3,8 +3,7 @@ package com.example.kotlin.kotlin_in_action_6
 import java.util.Locale
 
 fun main() {
-    val person = Person("진원", null)
-    println(person.countryName())
+    createPerson()
 }
 
 fun strLen(s: String?) = s?.length
@@ -32,7 +31,28 @@ class Address(val streetAddress: String, val zip: Int, val city: String, val cou
 class Company(val name: String, val address: Address?)
 class Person(val name: String, val company: Company?)
 
+fun printShippingLabel(person: Person) {
+    val address = person.company?.address ?: throw IllegalArgumentException("No Address")
+
+    with(address) {
+        println(streetAddress)
+        println("$zip $city $country")
+    }
+}
+
+fun createPerson() {
+    val address = Address("여기", 1234, "성남", "경기도")
+    val company = Company("마이다스", address)
+    val person = Person("진원", company)
+
+    printShippingLabel(person)
+}
+
 fun Person.countryName(): String {
     val country = this.company?.address?.country
     return country ?: "Unknown"
+}
+
+fun foo(s: String?) {
+    val t = s ?: ""
 }
