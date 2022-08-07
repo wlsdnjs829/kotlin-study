@@ -6,12 +6,8 @@ fun main() {
     println(person1 < person2)
 }
 
-class Person(private val firstName: String, private val lastName: String) : Comparator<Person> {
-    override fun compare(o1: Person, o2: Person): Int {
-        return compareValuesBy(o1, o2, Person::lastName, Person::firstName)
-    }
-
-    operator fun compareTo(other: Person): Int {
+class Person(private val firstName: String, private val lastName: String) : Comparable<Person> {
+    override fun compareTo(other: Person): Int {
         return compareValuesBy(this, other, Person::lastName, Person::firstName)
     }
 }

@@ -9,6 +9,16 @@ fun main() {
     println(++bd)
 }
 
+data class MutablePoint(var x: Int, var y: Int)
+
+operator fun MutablePoint.set(index: Int, value: Int) {
+    when (index) {
+        0 -> x = value
+        1 -> y = value
+        else -> throw IndexOutOfBoundsException("유효하지 않은 인덱스 넘버 $index")
+    }
+}
+
 class Point(val x: Int, val y: Int) {
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -27,6 +37,12 @@ class Point(val x: Int, val y: Int) {
         result = 31 * result + y
         return result
     }
+}
+
+operator fun Point.get(index: Int) = when (index) {
+    0 -> x
+    1 -> y
+    else -> throw IndexOutOfBoundsException("유효하지 않은 인덱스 넘버 $index")
 }
 
 operator fun Point.plus(other: Point) = Point(x + other.x, y + other.y)
