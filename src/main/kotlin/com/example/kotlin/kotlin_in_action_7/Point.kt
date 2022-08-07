@@ -20,6 +20,9 @@ operator fun MutablePoint.set(index: Int, value: Int) {
 }
 
 class Point(val x: Int, val y: Int) {
+    operator fun component1() = x
+    operator fun component2() = y
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
