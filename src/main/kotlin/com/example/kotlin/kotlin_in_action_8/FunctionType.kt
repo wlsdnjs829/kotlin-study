@@ -22,3 +22,7 @@ fun String.filter(predicate: (Char) -> Boolean) : String {
 
     return sb.toString()
 }
+
+fun processTheAnswer(f: (Int) -> Int) {
+    println(f(42))
+}
