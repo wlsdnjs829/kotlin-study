@@ -14,12 +14,3 @@ fun lookForOlder(people: List<Person>) {
     }
 }
 
-fun lookForEachOlder(people: List<Person>) {
-    people.forEach {
-        if (it.name == "진원") return@forEach
-
-        println("찾았다!")
-    }
-}
-
-
