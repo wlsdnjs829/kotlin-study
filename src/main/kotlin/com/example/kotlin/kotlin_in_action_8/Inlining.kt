@@ -22,7 +22,7 @@ inline fun <T> synchronized(lock: Lock, action: () -> T ): T {
     }
 }
 
-class LockOwner(val lock: Lock) {
+class LockOwner(private val lock: Lock) {
     fun runUnderLock(body: () -> Unit) {
         synchronized(lock, body)
     }
