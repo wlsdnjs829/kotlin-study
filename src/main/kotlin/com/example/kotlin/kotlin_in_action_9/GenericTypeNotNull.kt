@@ -9,7 +9,7 @@ fun nullProcessor() {
     nullableStringProcessor.process("진원")
 }
 
-class Processor<T : Any> {`
+class Processor<T : Any> {
     fun process(value: T) {
         value.hashCode()
     }
