@@ -34,7 +34,3 @@ fun takeCareOfCats(cats: Herd<Cat>) {
 
     feedAll(cats)
 }
-
-interface MutableList<T> : List<T>, MutableCollection<T> {
-    override fun add(element: T): Boolean
-}
