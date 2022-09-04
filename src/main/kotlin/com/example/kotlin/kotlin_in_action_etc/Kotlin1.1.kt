@@ -2,6 +2,7 @@ package com.example.kotlin.kotlin_in_action_etc
 
 import kotlin.math.sqrt
 
+/* 타입 별명 */
 // 컬렉션의 인스턴스에 대한 타입 별명
 typealias Args = Array<String>
 
@@ -24,6 +25,7 @@ class Foo {
 
 typealias FooBarBaz = Foo.Bar.Baz
 
+/* 프로퍼티 접근자 인라이닝 */
 val toplevel: Double
     inline get() = Math.PI
 
@@ -40,3 +42,18 @@ inline var InlinePropExample.square: Int
     set(v) {
         value = sqrt(v.toDouble()).toInt()
     }
+
+/* 제네릭 타입으로 이넘 값 접근 */
+enum class DAYSOFWEEK { MON, TUE, WED, THR, FRI, SAT, SUN }
+
+inline fun <reified T : Enum<T>> mkString() : String =
+    buildString {
+        for (v in enumValues<T>()) {
+            append(v)
+            append(",")
+        }
+    }
+
+//fun main() {
+//    println(mkString<DAYSOFWEEK>())
+//}
