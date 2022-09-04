@@ -1,11 +1,9 @@
 package com.example.kotlin.kotlin_in_action_etc
 
+import kotlin.math.sqrt
+
 // 컬렉션의 인스턴스에 대한 타입 별명
 typealias Args = Array<String>
-
-fun main(args: Args) {
-    val backing = InlinePropExample(3).backing
-}
 
 // MyHandler를 받는 고차 함수
 typealias MyHandler = (Int, String, Any) -> Unit
@@ -27,7 +25,7 @@ class Foo {
 typealias FooBarBaz = Foo.Bar.Baz
 
 val toplevel: Double
-    inline get() = java.lang.Math.PI
+    inline get() = Math.PI
 
 class InlinePropExample(var value: Int) {
     var setOnly: Int
@@ -35,13 +33,10 @@ class InlinePropExample(var value: Int) {
         inline set(v) {
             value = v
         }
-
-    val backing: Int = 10
-        inline get() = field * 1000
 }
 
 inline var InlinePropExample.square: Int
     get() = value * value
     set(v) {
-        value = java.lang.Math.sqrt(v.toDouble())
+        value = sqrt(v.toDouble()).toInt()
     }
