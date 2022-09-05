@@ -18,3 +18,14 @@ val numbers = mutableListOf(0, 1, 2, 3, 4, 5)
 
 val runningReduceSum = numbers.runningReduce { sum, item -> sum + item } // [0, 1, 3, 6, 10, 15]
 val runningFoldSum = numbers.runningFold(10) { sum, item -> sum + item } // [10, 10, 11, 13, 16, 20, 25]
+
+//generator countdown(n) {
+//    while (n > 0) {
+//        yield n
+//        n -= 1
+//    }
+//}
+//
+//for i in countdown(10) {
+//    println(1)
+//}

@@ -33,6 +33,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.0.1")
 
     val koTestVersion = "5.3.2"
     testImplementation("io.kotest:kotest-runner-junit5:$koTestVersion")
