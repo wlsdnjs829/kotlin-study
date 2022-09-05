@@ -78,7 +78,7 @@ class BarDelegate {
 
 val y: Int by BarDelegate()
 
-fun main() {
-    val x: Int by BarDelegate()
-    println("x = $x, y = $y")
-}
+//fun main() {
+//    val x: Int by BarDelegate()
+//    println("x = $x, y = $y")
+//}
