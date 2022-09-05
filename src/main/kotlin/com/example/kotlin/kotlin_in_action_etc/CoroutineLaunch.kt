@@ -59,6 +59,6 @@ fun yieldExample() {
     }
 }
 
-fun main() {
+fun yieldTest() {
     yieldExample()
 }
