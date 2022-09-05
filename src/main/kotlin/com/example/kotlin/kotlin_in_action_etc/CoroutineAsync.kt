@@ -21,6 +21,6 @@ fun sumAll() {
     }
 }
 
-fun main() {
+fun sumAllTest() {
     sumAll()
 }
